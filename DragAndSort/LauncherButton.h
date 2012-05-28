@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LauncherItem.h"
 
 @interface LauncherButton : UIButton
+{
+    UIButton        *_closeButton;
+    UILabel         *_badge;
+    LauncherItem    *_launcherItem;
+    
+    BOOL             _dragging;
+    BOOL             _editing;
+    
+    UILongPressGestureRecognizer *_longPressGest;
+}
+
+@property (nonatomic, readonly) LauncherItem  *item;
+@property (nonatomic, readonly) UIButton      *closeButton;
+@property (nonatomic, assign)   BOOL           dragging;
+@property (nonatomic, assign)   BOOL           editing; 
+
+- (id)initWithItem:(LauncherItem *)item;
 
 @end

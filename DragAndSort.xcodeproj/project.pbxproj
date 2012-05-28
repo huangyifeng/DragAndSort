@@ -40,6 +40,7 @@
 		BB1FBAF015731A5B00ADB68F /* LauncherButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherButton.m; sourceTree = "<group>"; };
 		BB1FBAF215731B0100ADB68F /* LauncherItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherItem.h; sourceTree = "<group>"; };
 		BB1FBAF315731B0100ADB68F /* LauncherItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherItem.m; sourceTree = "<group>"; };
+		BB1FBB261573763800ADB68F /* NSSafelyRelease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSafelyRelease.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +89,7 @@
 			children = (
 				BB1FBADB1573179D00ADB68F /* AppDelegate.h */,
 				BB1FBADC1573179D00ADB68F /* AppDelegate.m */,
+				BB1FBB271573763F00ADB68F /* Common */,
 				BB1FBAEB1573184600ADB68F /* Entity */,
 				BB1FBAEA157317E000ADB68F /* ViewController */,
 				BB1FBAE9157317B600ADB68F /* View */,
@@ -135,6 +137,14 @@
 				BB1FBAF315731B0100ADB68F /* LauncherItem.m */,
 			);
 			name = Entity;
+			sourceTree = "<group>";
+		};
+		BB1FBB271573763F00ADB68F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				BB1FBB261573763800ADB68F /* NSSafelyRelease.h */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +246,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -261,7 +271,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
