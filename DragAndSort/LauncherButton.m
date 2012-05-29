@@ -13,6 +13,9 @@
 
 @property (nonatomic, retain)UILongPressGestureRecognizer *_longPressGest;
 
+- (void)_handleLongPress:(UILongPressGestureRecognizer *)longPress;
+- (void)_handlePane:(UIPanGestureRecognizer *)pan;
+
 @end
 
 @implementation LauncherButton
@@ -38,7 +41,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-//        self._longPressGest = [UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(<#selector#>)
+        self._longPressGest = [[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(_handleLongPress:)] autorelease];
     }
     return self;
 }
@@ -53,8 +56,62 @@
     return self;
 }
 
+#pragma mark - private
+
+- (void)_handleLongPress:(UILongPressGestureRecognizer *)longPress
+{
+    if (!self.editing)
+    {
+        self.editing = YES;
+    }
+}
+
+- (void)_handlePane:(UIPanGestureRecognizer *)pan
+{
+    if (self.editing && UIGestureRecognizerStateChanged == pan.state)
+    {
+        CGPoint trans = [pan translationInView:self.superview];
+        self.center = CGPointMake(pan.view.center.x + trans.x, pan.view.center.y + trans.y);
+        [pan setTranslation:CGPointMake(0, 0) inView:self.superview];
+    }
+}
+
 #pragma mark - public
 
+- (void)setEditing:(BOOL)editing
+{
+    if (_editing != editing)
+    {
+        _editing = editing;
+        
+        if (editing)
+        {
+            //@TODO: add close button
+        }
+        else
+        {
+            //@TODO: remove close button
+        }
+    }
+}
+
+- (void)setDragging:(BOOL)dragging
+{
+    if (_dragging != dragging)
+    {
+        _dragging = dragging;
+        if (dragging)
+        {
+            self.transform = CGAffineTransformMakeScale(1.5, 1.5);
+            self.alpha = 0.7;
+        }
+        else
+        {
+            self.transform = CGAffineTransformIdentity;
+            self.alpha = 1;
+        }
+    }
+}
 
 
 @end

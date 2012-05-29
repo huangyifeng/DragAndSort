@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface LauncherView : UIView
+{
+    UIScrollView    *_scrollView;
+    NSMutableArray  *_launcherButtons; //array of LauncherButton
+    
+    NSMutableArray  *_launcherItems; //array of LauncherItem;
+    
+}
 
 @end
