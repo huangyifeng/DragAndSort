@@ -21,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB0788601575C53B009B0E45 /* LauncherViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewDataSource.h; sourceTree = "<group>"; };
+		BB0788621575C555009B0E45 /* LauncherViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherViewDelegate.h; sourceTree = "<group>"; };
 		BB1FBAC81573179D00ADB68F /* DragAndSort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragAndSort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB1FBACC1573179D00ADB68F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BB1FBACE1573179D00ADB68F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +118,8 @@
 				BB1FBAED15731A2A00ADB68F /* LauncherView.m */,
 				BB1FBAEF15731A5B00ADB68F /* LauncherButton.h */,
 				BB1FBAF015731A5B00ADB68F /* LauncherButton.m */,
+				BB0788601575C53B009B0E45 /* LauncherViewDataSource.h */,
+				BB0788621575C555009B0E45 /* LauncherViewDelegate.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -327,6 +331,7 @@
 				BB1FBAE81573179D00ADB68F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

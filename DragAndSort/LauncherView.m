@@ -7,8 +7,33 @@
 //
 
 #import "LauncherView.h"
+#import "NSSafelyRelease.h"
+
+@interface LauncherView ()
+
+@property (nonatomic, retain) UIScrollView  *_scrollView;
+
+@end
 
 @implementation LauncherView
+
+@synthesize _scrollView     = _scrollView;
+
+@synthesize editable        = _editable;
+@synthesize editing         = _editing;
+@synthesize columnCount     = _columnCount;
+
+@synthesize delegate        = _delegate;
+@synthesize dataSource      = _dataSource;
+
+- (void)dealloc
+{
+    RELEASE_SAFELY(_scrollView);
+    [super dealloc];
+}
+
+
+#pragma mark - life cycle
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -27,5 +52,18 @@
     // Drawing code
 }
 */
+
+#pragma mark - public
+
+- (NSInteger)rowCount
+{
+    
+}
+
+- (NSInteger)currentPageIndex
+{
+    
+}
+
 
 @end
