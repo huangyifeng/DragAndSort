@@ -16,14 +16,18 @@
     NSMutableArray  *_launcherButtons; //array of LauncherButton array
     
     NSMutableArray  *_launcherItems; //array of LauncherItem array;
-    
     NSInteger        _columnCount;
+    
+    CGFloat          _topMargin;
+    CGFloat          _sideMargin;
+    CGFloat          _vGap;
+    CGFloat          _hGap;
     
     BOOL             _editing;
     BOOL             _editable;
     
-    NSObject<LauncherViewDelegate>    *_delegate;
-    NSObject<LauncherViewDataSource>  *_dataSource;
+//    NSObject<LauncherViewDelegate>    *_delegate;
+//    NSObject<LauncherViewDataSource>  *_dataSource;
 }
 
 @property (nonatomic, readonly) BOOL        editing;
@@ -33,7 +37,7 @@
 @property (nonatomic, readonly) NSInteger   rowCount;
 @property (nonatomic, readonly) NSInteger   currentPageIndex;
 
-@property (nonatomic, assign) IBOutlet  NSObject<LauncherViewDelegate>      *delegate;
-@property (nonatomic, assign) IBOutlet  NSObject<LauncherViewDataSource>    *dataSource;
+//@property (nonatomic, assign) IBOutlet  NSObject<LauncherViewDelegate>      *delegate;
+//@property (nonatomic, assign) IBOutlet  NSObject<LauncherViewDataSource>    *dataSource;
 
 @end

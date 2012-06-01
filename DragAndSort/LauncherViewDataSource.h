@@ -14,7 +14,7 @@
 
 @required
 - (NSInteger)numberOfPageInLauncherView:(LauncherView *)launcherVew;
-- (NSInteger)launcherVew:(LauncherView *)launcherVew numberofButtonInPage:(NSInteger)pageIndex;
+- (NSInteger)numberOfColumnInLauncherView:(LauncherView *)launcherView;
 
 - (LauncherButton *)launcherView:(LauncherView *)launcherView 
     buttonForPositionAtIndexPath:(NSIndexPath *)indexPath;
@@ -22,7 +22,7 @@
 @optional
 
 #pragma mark - reorder
-- (void)launcherVew:(LauncherView *)launcherView canMoveItemAtIndexPath:(NSIndexPath*)indexPath;
+
 - (void)launcherVew:(LauncherView *)launcherVew moveItemAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath;
 
 

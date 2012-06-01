@@ -18,6 +18,7 @@
 		BB1FBAEE15731A2A00ADB68F /* LauncherView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1FBAED15731A2A00ADB68F /* LauncherView.m */; };
 		BB1FBAF115731A5B00ADB68F /* LauncherButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1FBAF015731A5B00ADB68F /* LauncherButton.m */; };
 		BB1FBAF415731B0100ADB68F /* LauncherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1FBAF315731B0100ADB68F /* LauncherItem.m */; };
+		BB4522941577701800A479E6 /* UIVIew+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4522931577701800A479E6 /* UIVIew+Util.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		BB1FBAF215731B0100ADB68F /* LauncherItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LauncherItem.h; sourceTree = "<group>"; };
 		BB1FBAF315731B0100ADB68F /* LauncherItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LauncherItem.m; sourceTree = "<group>"; };
 		BB1FBB261573763800ADB68F /* NSSafelyRelease.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSSafelyRelease.h; sourceTree = "<group>"; };
+		BB4522921577701800A479E6 /* UIVIew+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIVIew+Util.h"; sourceTree = "<group>"; };
+		BB4522931577701800A479E6 /* UIVIew+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIVIew+Util.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +140,10 @@
 		BB1FBAEB1573184600ADB68F /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				BB1FBAF215731B0100ADB68F /* LauncherItem.h */,
 				BB1FBAF315731B0100ADB68F /* LauncherItem.m */,
+				BB1FBAF215731B0100ADB68F /* LauncherItem.h */,
+				BB4522921577701800A479E6 /* UIVIew+Util.h */,
+				BB4522931577701800A479E6 /* UIVIew+Util.m */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				BB1FBAEE15731A2A00ADB68F /* LauncherView.m in Sources */,
 				BB1FBAF115731A5B00ADB68F /* LauncherButton.m in Sources */,
 				BB1FBAF415731B0100ADB68F /* LauncherItem.m in Sources */,
+				BB4522941577701800A479E6 /* UIVIew+Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

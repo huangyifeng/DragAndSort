@@ -13,6 +13,7 @@
 
 @optional
 - (CGSize)launcherView:(LauncherView *)launcherView sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
-
+- (CGFloat)topMarginInLauncherView:(LauncherView *)launcherView;
+- (CGFloat)sideMarginInLauncherView:(LauncherView *)launcherView;
 
 @end
