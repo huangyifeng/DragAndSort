@@ -7,13 +7,16 @@
 //
 
 #import "ViewController.h"
+#import "NSSafelyRelease.h"
 
 @implementation ViewController
 
-- (void)didReceiveMemoryWarning
+@synthesize launcherView = _launcherView;
+
+- (void)dealloc
 {
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+    RELEASE_SAFELY(_launcherView);
+    [super dealloc];
 }
 
 #pragma mark - View lifecycle
@@ -21,40 +24,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    LauncherItem *item1 = [[LauncherItem alloc] initWithTitle:@"Schedule" image:@"schedule" identity:@"grn.schedule"];
+    LauncherItem *item2 = [[LauncherItem alloc] initWithTitle:@"Message" image:@"message" identity:@"grn.message"];
+    LauncherItem *item3 = [[LauncherItem alloc] initWithTitle:@"Setting" image:@"setting" identity:@"kunai.setting"];
+    
+    self.launcherView.launcherItems = [NSArray arrayWithObjects:
+                                       [NSArray arrayWithObjects:item1,item2, nil],
+                                       [NSArray arrayWithObjects:item3, nil],
+                                       nil];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-	[super viewDidDisappear:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
 
 @end

@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LauncherView.h"
+#import "LauncherItem.h"
 
 @interface ViewController : UIViewController
+{
+    LauncherView    *_launcherView;
+}
+
+@property(nonatomic, retain)IBOutlet LauncherView *launcherView;
 
 @end
+

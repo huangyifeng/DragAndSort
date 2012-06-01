@@ -17,13 +17,13 @@ static const CGFloat k_Default_Horizontal_Gap = 10.0f;
 
 @interface LauncherView ()
 
+- (void)initView;
 - (void)layoutButtons;
 - (void)createButtons;
 
 
 @property (nonatomic, retain) UIScrollView  *_scrollView;
 @property (nonatomic, retain) NSMutableArray       *_launcherButtons;
-@property (nonatomic, retain) NSMutableArray       *_launcherItems;
 
 @end
 
@@ -35,8 +35,8 @@ static const CGFloat k_Default_Horizontal_Gap = 10.0f;
 @synthesize editing         = _editing;
 @synthesize columnCount     = _columnCount;
 
-@synthesize _launcherButtons = _launcherButtons;
-@synthesize _launcherItems  = _launcherItems;
+@synthesize _launcherButtons    = _launcherButtons;
+@synthesize launcherItems       = _launcherItems;
 
 //@synthesize delegate        = _delegate;
 //@synthesize dataSource      = _dataSource;
@@ -54,7 +54,7 @@ static const CGFloat k_Default_Horizontal_Gap = 10.0f;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [self initView];
     }
     return self;
 }
@@ -67,12 +67,32 @@ static const CGFloat k_Default_Horizontal_Gap = 10.0f;
     {
         [self createButtons];
     }
+    [self layoutButtons];
+}
+
+#pragma mark - private
+
+- (void)initView
+{
+    self._scrollView = [[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)] autorelease];
+    self._scrollView.multipleTouchEnabled = NO;
+    self._scrollView.pagingEnabled = YES;
+    self._scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    _topMargin = k_Default_Top_Margin;
+    _sideMargin = k_Default_Side_Margin;
+    _vGap = k_Default_Vertical_Gap;
+    _hGap= k_Default_Horizontal_Gap;
+    
+    self.columnCount = 4;
+    
+    [self addSubview:self._scrollView];
 }
 
 - (void)createButtons
 {
-    self._launcherButtons = [NSMutableArray arrayWithCapacity:self._launcherItems.count];
-    for (NSArray *pageItems in self._launcherItems)
+    self._launcherButtons = [NSMutableArray arrayWithCapacity:self.launcherItems.count];
+    for (NSArray *pageItems in self.launcherItems)
     {
         NSMutableArray *buttonPage = [NSMutableArray arrayWithCapacity:pageItems.count];
         [self._launcherButtons addObject:buttonPage];
@@ -81,11 +101,10 @@ static const CGFloat k_Default_Horizontal_Gap = 10.0f;
         {
             LauncherButton *button = [[[LauncherButton alloc] initWithItem:item] autorelease];
             [buttonPage addObject:button];
+            [self._scrollView addSubview:button];
         }
     }
 }
-
-#pragma mark - private
 
 - (void)layoutButtons
 {
@@ -128,6 +147,7 @@ static const CGFloat k_Default_Horizontal_Gap = 10.0f;
 {
     return 1;
 }
+
 
 
 @end

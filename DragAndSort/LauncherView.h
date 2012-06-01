@@ -37,6 +37,8 @@
 @property (nonatomic, readonly) NSInteger   rowCount;
 @property (nonatomic, readonly) NSInteger   currentPageIndex;
 
+@property (nonatomic, strong) NSArray       *launcherItems;
+
 //@property (nonatomic, assign) IBOutlet  NSObject<LauncherViewDelegate>      *delegate;
 //@property (nonatomic, assign) IBOutlet  NSObject<LauncherViewDataSource>    *dataSource;
 

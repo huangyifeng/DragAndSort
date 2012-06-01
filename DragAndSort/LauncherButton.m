@@ -11,10 +11,12 @@
 
 @interface LauncherButton ()
 
-@property (nonatomic, retain)UILongPressGestureRecognizer *_longPressGest;
+@property (nonatomic, retain)UILongPressGestureRecognizer   *_longPressGest;
+@property (nonatomic, retain)UIPanGestureRecognizer         *_panGest;
 
 - (void)_handleLongPress:(UILongPressGestureRecognizer *)longPress;
 - (void)_handlePane:(UIPanGestureRecognizer *)pan;
+- (void)initView;
 
 @end
 
@@ -24,26 +26,25 @@
 @synthesize closeButton = _closeButton;
 @synthesize editing     = _editing;
 @synthesize dragging    = _dragging;
-@synthesize _longPressGest = _longPressGest;
+@synthesize _longPressGest  = _longPressGest;
+@synthesize _panGest        = _panGest;
 
 - (void)dealloc
 {
     RELEASE_SAFELY(_item);
     RELEASE_SAFELY(_closeButton);
     RELEASE_SAFELY(_longPressGest);
+    RELEASE_SAFELY(_panGest);
     [super dealloc];
 }
 
 #pragma mark - init
 
-- (id)initWithFrame:(CGRect)frame
+- (void)initView
 {
-    self = [super initWithFrame:frame];
-    if (self)
-    {
-        self._longPressGest = [[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(_handleLongPress:)] autorelease];
-    }
-    return self;
+    self._longPressGest = [[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(_handleLongPress:)] autorelease];
+    self._panGest = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(_panGest)] autorelease];
+    self.titleLabel.text = _item.title;
 }
 
 - (id)initWithItem:(LauncherItem *)item
@@ -52,6 +53,7 @@
     if (self)
     {
         _item = [item retain];
+        
     }
     return self;
 }

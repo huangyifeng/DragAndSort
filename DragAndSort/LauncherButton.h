@@ -19,6 +19,7 @@
     BOOL             _editing;
     
     UILongPressGestureRecognizer *_longPressGest;
+    UIPanGestureRecognizer       *_panGest;
 }
 
 @property (nonatomic, readonly) LauncherItem  *item;
